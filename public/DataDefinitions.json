@@ -1,0 +1,824 @@
+export const listOfFilters =
+[
+  {
+    columnHeader: "testing_stage",
+    columnDisplayName: "Stage",
+    columnType: "enum",
+    showByDefault: 1,
+    possibleValues: [
+      "ET",
+      "WT",
+      "FT"
+    ]
+  },
+  {
+    columnHeader: "Category",
+    columnDisplayName: "Category",
+    columnType: "enum",
+    showByDefault: 1,
+    possibleValues: [
+      "Final",
+      "FirstPass"
+    ]
+  },
+  {
+    columnHeader: "bin_type",
+    columnDisplayName: "Bin Type",
+    columnType: "enum",
+    showByDefault: 1,
+    possibleValues: "[\"Sbin\", Hbin\"]"
+  },
+  {
+    columnHeader: "lot_id",
+    columnDisplayName: "Lot",
+    columnType: "string",
+    showByDefault: 1,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "pf",
+    columnDisplayName: "PF",
+    columnType: "enum",
+    showByDefault: 0,
+    possibleValues: [
+      "P",
+      "F"
+    ]
+  },
+  {
+    columnHeader: "site_no",
+    columnDisplayName: "Touchdown Site",
+    columnType: "int",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "num",
+    columnDisplayName: "Bin Number",
+    columnType: "int",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "name",
+    columnDisplayName: "Bin Name",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "num_name",
+    columnDisplayName: "NumName",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "nb_parts",
+    columnDisplayName: "Qty",
+    columnType: "int",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "sublot_id",
+    columnDisplayName: "Sublot",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "wafer_id",
+    columnDisplayName: "Wafer ID",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "product_name",
+    columnDisplayName: "Product",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "setup_t",
+    columnDisplayName: "Setup Time",
+    columnType: "int",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "start_t",
+    columnDisplayName: "Start Time",
+    columnType: "int",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "finish_t",
+    columnDisplayName: "Finish Time",
+    columnType: "int",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "stat_num",
+    columnDisplayName: "Stat Num",
+    columnType: "int",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "tester_name",
+    columnDisplayName: "Tester",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "tester_type",
+    columnDisplayName: "Tester Type",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "splitlot_nb_parts",
+    columnDisplayName: "Splitlot Qty",
+    columnType: "int",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "data_provider",
+    columnDisplayName: "Data Provider",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "data_type",
+    columnDisplayName: "Data Type",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "prod_data",
+    columnDisplayName: "Prod Data",
+    columnType: "enum",
+    showByDefault: 0,
+    possibleValues: [
+      "Y",
+      "N"
+    ]
+  },
+  {
+    columnHeader: "retest_index",
+    columnDisplayName: "Retest Index",
+    columnType: "int",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "retest_hbins",
+    columnDisplayName: "Retested Bins",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "rework_code",
+    columnDisplayName: "Rework Code",
+    columnType: "int",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "job_nam",
+    columnDisplayName: "Test Program",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "job_rev",
+    columnDisplayName: "Test Program Rev",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "oper_nam",
+    columnDisplayName: "Operator",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "exec_typ",
+    columnDisplayName: "Exec",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "exec_ver",
+    columnDisplayName: "Exec Ver",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "test_cod",
+    columnDisplayName: "Test Code",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "facil_id",
+    columnDisplayName: "Facility",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "tst_temp",
+    columnDisplayName: "Temp",
+    columnType: "",
+    showByDefault: "",
+    possibleValues: ""
+  },
+  {
+    columnHeader: "mode_cod",
+    columnDisplayName: "Mode",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "rtst_cod",
+    columnDisplayName: "Retest Code",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "prot_cod",
+    columnDisplayName: "Prot",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "burn_tim",
+    columnDisplayName: "Burn Time",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "cmod_cod",
+    columnDisplayName: "CMOD",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "part_typ",
+    columnDisplayName: "Part Type",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "user_txt",
+    columnDisplayName: "User Text",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "aux_file",
+    columnDisplayName: "Aux File",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "pkg_typ",
+    columnDisplayName: "Package",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "famly_id",
+    columnDisplayName: "Family",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "date_cod",
+    columnDisplayName: "Date Code",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "floor_id",
+    columnDisplayName: "Floor",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "proc_id",
+    columnDisplayName: "Proc ID",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "oper_frq",
+    columnDisplayName: "Op Frq",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "spec_nam",
+    columnDisplayName: "Spec Name",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "spec_ver",
+    columnDisplayName: "Spec Ver",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "flow_id",
+    columnDisplayName: "Flow",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "setup_id",
+    columnDisplayName: "Setup",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "dsgn_rev",
+    columnDisplayName: "Design Rev",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "eng_id",
+    columnDisplayName: "Eng ID",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "rom_cod",
+    columnDisplayName: "ROM",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "serl_num",
+    columnDisplayName: "Serial Num",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "supr_nam",
+    columnDisplayName: "Sup Name",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "nb_sites",
+    columnDisplayName: "NB Sites",
+    columnType: "int",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "head_num",
+    columnDisplayName: "Head Num",
+    columnType: "int",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "handler_typ",
+    columnDisplayName: "Handler Type",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "handler_id",
+    columnDisplayName: "Handler",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "card_typ",
+    columnDisplayName: "Card Type",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "card_id",
+    columnDisplayName: "Card ID",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "loadboard_typ",
+    columnDisplayName: "Loadboard Type",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "loadboard_id",
+    columnDisplayName: "Loadboard",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "dib_typ",
+    columnDisplayName: "DIB Type",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "dib_id",
+    columnDisplayName: "DIB ID",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "cable_typ",
+    columnDisplayName: "Cable Type",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "cable_id",
+    columnDisplayName: "Cable ID",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "contactor_typ",
+    columnDisplayName: "Contactor Type",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "contactor_id",
+    columnDisplayName: "Contactor ID",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "laser_typ",
+    columnDisplayName: "Laser Type",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "laser_id",
+    columnDisplayName: "Laser ID",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "extra_typ",
+    columnDisplayName: "Extra Type",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "extra_id",
+    columnDisplayName: "Extra ID",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "file_host_id",
+    columnDisplayName: "File Host ID",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "file_path",
+    columnDisplayName: "File Path",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "file_name",
+    columnDisplayName: "File Name",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "valid_splitlot",
+    columnDisplayName: "Valid File",
+    columnType: "enum",
+    showByDefault: 0,
+    possibleValues: [
+      "Y",
+      "N"
+    ]
+  },
+  {
+    columnHeader: "insertion_time",
+    columnDisplayName: "Insertion Time",
+    columnType: "int",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "subcon_lot_id",
+    columnDisplayName: "Subcon Lot",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "incremental_update",
+    columnDisplayName: "Incr Update",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "sya_id",
+    columnDisplayName: "SYA ID",
+    columnType: "int",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "day",
+    columnDisplayName: "Day",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "week_nb",
+    columnDisplayName: "Week",
+    columnType: "int",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "month_nb",
+    columnDisplayName: "Month",
+    columnType: "int",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "quarter_nb",
+    columnDisplayName: "Qtr",
+    columnType: "int",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "year_nb",
+    columnDisplayName: "Year",
+    columnType: "int",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "year_and_week",
+    columnDisplayName: "Year Week",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "year_and_month",
+    columnDisplayName: "Year Month",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "year_and_quarter",
+    columnDisplayName: "Year Qtr",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "recipe_id",
+    columnDisplayName: "Recipe",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "start_time",
+    columnDisplayName: "Start Time Str",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "finish_time",
+    columnDisplayName: "Finish Time Str",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "consolidation_name",
+    columnDisplayName: "Consolidation Name",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "consolidation_flow",
+    columnDisplayName: "Consolidation Flow",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "tableau_marker",
+    columnDisplayName: "tableauMarker",
+    columnType: "int",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "splitlot_id",
+    columnDisplayName: "SplitlotID",
+    columnType: "int",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "application",
+    columnDisplayName: "Application",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "bvdss",
+    columnDisplayName: "BVDSS",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "cell_density",
+    columnDisplayName: "Cell Density",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "device_design",
+    columnDisplayName: "Device Design",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "device_polarity",
+    columnDisplayName: "Polarity",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "fab_loc",
+    columnDisplayName: "Fab",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "gate_oxide",
+    columnDisplayName: "Gate Oxide",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "geometry_name",
+    columnDisplayName: "Geometry",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "dspart_short",
+    columnDisplayName: "Die Sort Part",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "dspart_rev",
+    columnDisplayName: "Die Sort Part Rev",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "site_loc",
+    columnDisplayName: "Location",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "wafer_size",
+    columnDisplayName: "Wafer Size",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "stack_map",
+    columnDisplayName: "Stack Map",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "dummy",
+    columnDisplayName: "Dummy",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "vthres",
+    columnDisplayName: "VTHRES",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "device_type",
+    columnDisplayName: "Device Type",
+    columnType: "string",
+    showByDefault: 0,
+    possibleValues: ""
+  },
+  {
+    columnHeader: "cost",
+    columnDisplayName: "Cost",
+    columnType: "float",
+    showByDefault: 0,
+    possibleValues: ""
+  }
+]
