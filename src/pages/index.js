@@ -1,7 +1,7 @@
 import * as React from "react";
 import { listOfFilters } from "./listOfFilters";
 import Select from "react-select";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import { Navbar } from "react-bootstrap";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
