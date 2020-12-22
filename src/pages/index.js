@@ -82,6 +82,7 @@ export default function FilterPage() {
           onChange={(event) => handleChange(event, filter.columnHeader)}
           options={optionsObj}
           placeholder=""
+          closeMenuOnSelect={false}
         />
       </div>
     );
@@ -218,7 +219,7 @@ export default function FilterPage() {
 
   return (
     <div>
-      <Navbar bg="#591c2c" variant="dark" style={{ background: "#591c2c" }}>
+      <Navbar bg="#051C2C" variant="dark" style={{ background: "#051C2C" }}>
         <Navbar.Brand href="#home">
           <img
             alt=""
