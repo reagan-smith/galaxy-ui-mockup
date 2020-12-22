@@ -32,6 +32,7 @@ export default function FilterPage() {
   const [displayedFilters, setDisplayedFilters] = React.useState(
     listOfFilters.filter((filter) => filter.showByDefault)
   );
+  const [searchValues, setSearchValues] = React.useState({});
 
   const handleChange = (event, columnHeader) => {
     setSelectedObjects({
@@ -45,6 +46,24 @@ export default function FilterPage() {
       ...selectedObjects,
       [columnHeader]: !selectedObjects[columnHeader],
     });
+  };
+
+  const handleInputChange = (event, columnHeader) => {
+    if (event != "") {
+      setSearchValues({
+        ...searchValues,
+        [columnHeader]: event,
+      });
+    }
+  };
+
+  const onKeyDown = (event, columnHeader) => {
+    if (searchValues[columnHeader]?.length === 1 && event.key === "Backspace") {
+      setSearchValues({
+        ...searchValues,
+        [columnHeader]: "",
+      });
+    }
   };
 
   const removeFilter = (headerName) => {
@@ -80,6 +99,11 @@ export default function FilterPage() {
           isMulti
           value={selectedObjects[filter.columnHeader]}
           onChange={(event) => handleChange(event, filter.columnHeader)}
+          onInputChange={(event) =>
+            handleInputChange(event, filter.columnHeader)
+          }
+          inputValue={searchValues[filter.columnHeader]}
+          onKeyDown={(event) => onKeyDown(event, filter.columnHeader)}
           options={optionsObj}
           placeholder=""
           closeMenuOnSelect={false}
