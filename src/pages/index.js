@@ -59,6 +59,7 @@ export default function FilterPage() {
           value={selectedObjects[filter.columnHeader]}
           onChange={(event) => handleChange(event, filter.columnHeader)}
           options={optionsObj}
+          placeholder=""
         />
       </div>
     );
@@ -157,7 +158,12 @@ export default function FilterPage() {
         >
           Add New Filter
         </div>
-        <Select value={[]} onChange={addNewFilterCallback} options={options} />
+        <Select
+          placeholder=""
+          value={[]}
+          onChange={addNewFilterCallback}
+          options={options}
+        />
       </div>
     );
   };
