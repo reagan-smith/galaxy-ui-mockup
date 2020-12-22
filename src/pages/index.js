@@ -47,13 +47,35 @@ export default function FilterPage() {
     });
   };
 
+  const removeFilter = (headerName) => {
+    setDisplayedFilters(
+      displayedFilters.filter((filter) => filter.columnHeader !== headerName)
+    );
+  };
+
   const enumSelect = (filter) => {
     const optionsObj = filter.possibleValues.map((val) => {
       return { value: val, label: val };
     });
     return (
       <div className="filter-grouping">
-        <div className="filter-header">{filter.columnDisplayName}</div>
+        <div className="filter-header">
+          {filter.columnDisplayName}
+          {!filter.showByDefault && (
+            <div
+              style={{
+                cursor: "pointer",
+                float: "right",
+                color: "#bbb",
+                fontWeight: "bold",
+                marginRight: "3px",
+              }}
+              onClick={() => removeFilter(filter.columnHeader)}
+            >
+              &#10006;
+            </div>
+          )}
+        </div>
         <Select
           isMulti
           value={selectedObjects[filter.columnHeader]}
@@ -66,18 +88,39 @@ export default function FilterPage() {
   };
 
   const dateSelect = (filter) => (
-    <div className="filter-grouping">
+    <div className="filter-grouping date-range">
       <div className="filter-header">{filter.columnDisplayName}</div>
-      <TextField
-        id={filter.columnHeader}
-        style={{ width: "100%" }}
-        type="datetime-local"
-        defaultValue="2017-05-24T10:30"
-        className={classes.textField}
-        InputLabelProps={{
-          shrink: true,
-        }}
-      />
+      <div style={{ display: "flex" }}>
+        <TextField
+          id={filter.columnHeader}
+          style={{ width: "100%" }}
+          type="datetime-local"
+          defaultValue="2017-05-24T10:30"
+          className={classes.textField}
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+        <span
+          style={{
+            paddingRight: "13px",
+            fontSize: "20px",
+            paddingLeft: "12px",
+          }}
+        >
+          &#129046;
+        </span>
+        <TextField
+          id={filter.columnHeader}
+          style={{ width: "100%" }}
+          type="datetime-local"
+          defaultValue="2017-05-24T10:30"
+          className={classes.textField}
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+      </div>
     </div>
   );
 
@@ -117,15 +160,20 @@ export default function FilterPage() {
   };
 
   const addNewFilterCallback = (event) => {
-    const filterToAdd = listOfFilters.filter((filter) =>
-      event.value.includes(filter.columnHeader)
-    );
-    setDisplayedFilters(displayedFilters.concat(filterToAdd));
     if (typeof event.value !== "string") {
+      const filterToAdd = listOfFilters.filter(
+        (filter) => event.value[0] === filter.columnHeader
+      );
+      setDisplayedFilters(displayedFilters.concat(filterToAdd));
       setSelectedObjects({
         ...selectedObjects,
         [event.value[0]]: [{ label: event.value[1], value: event.value[1] }],
       });
+    } else {
+      const filterToAdd = listOfFilters.filter(
+        (filter) => event.value === filter.columnHeader
+      );
+      setDisplayedFilters(displayedFilters.concat(filterToAdd));
     }
   };
 
@@ -170,11 +218,11 @@ export default function FilterPage() {
 
   return (
     <div>
-      <Navbar bg="dark" variant="dark">
+      <Navbar bg="#591c2c" variant="dark" style={{ background: "#591c2c" }}>
         <Navbar.Brand href="#home">
           <img
             alt=""
-            src="/galaxy-logo.jpg"
+            src="\GALAXYLOGOREVERSENOBG.png"
             width="348"
             height="68"
             style={{ paddingLeft: "1rem" }}
